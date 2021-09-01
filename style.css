@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Vibur", sans-serif;
+  color: #fff;
+}
+
+.vaporware-top {
+  width: 100%;
+  height: 60vh;
+  background-color: #010a01;
+  background: linear-gradient(
+    to bottom,
+    #010a01,
+    #c752cf 0%,
+    #010a01 50%,
+    #c752cf,
+    #010a01
+  );
+}
+
+.neonText {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #c752cf,
+    0 0 82px #c752cf, 0 0 92px #c752cf, 0 0 102px #c752cf, 0 0 151px #c752cf;
+}
+
+h1 {
+  padding-top: 5%;
+  font-size: 5rem;
+  text-align: center;
+  animation: flicker 1.5s infinite alternate;
+}
+
+#profile {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: #c752cf 25px solid;
+  box-shadow: 0px 0px 35px #c752cf;
+  position: absolute;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -125px;
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+}
+
+.grid {
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: -50%;
+  background-color: #010a01;
+  background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 85%,
+      #c752cf 90%,
+      transparent 95%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0%,
+      transparent 85%,
+      #c752cf 90%,
+      transparent 95%
+    );
+  background-size: 36px 24px;
+  width: 200vw;
+  height: 60vh;
+  transform: translate3D(0, 0, 0) perspective(150px) rotateX(45deg);
+  perspective-origin: top;
+
+  animation-name: movement;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.grid:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, black);
+}
+
+@keyframes movement {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #c752cf,
+      0 0 82px #c752cf, 0 0 92px #c752cf, 0 0 102px #c752cf, 0 0 151px #c752cf;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
