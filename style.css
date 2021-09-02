@@ -11,6 +11,8 @@ body {
 }
 
 .vaporware-top {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 60vh;
   background-color: #010a01;
@@ -34,6 +36,7 @@ h1 {
   font-size: 5rem;
   text-align: center;
   animation: flicker 1.5s infinite alternate;
+  z-index: 20;
 }
 
 #profile {
@@ -91,6 +94,30 @@ h1 {
   width: 100%;
   height: 100%;
   background: linear-gradient(to top, transparent, black);
+}
+
+.mountains {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 25;
+}
+
+.lines {
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 15;
+}
+
+.vwmountains {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  z-index: 15;
 }
 
 @keyframes movement {
